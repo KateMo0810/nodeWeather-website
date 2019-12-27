@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const parcialPath = path.join(__dirname, '../templates/partials')
     //crear la aplicacion 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Personalizar el servidor
 app.set('views', viewsPath)
@@ -102,6 +103,6 @@ app.get('*', (req, res) => {
 })
 
 //Server up
-app.listen(3000, () => {
-    console.log('Server is up un port 3000')
+app.listen(port, () => {
+    console.log('Server is up un port ' + port)
 })
